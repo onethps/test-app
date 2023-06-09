@@ -1,0 +1,11 @@
+$sidebarWidth: 300px;
+
+.sidebar {
+  max-width: $sidebarWidth;
+  min-height: 100vh;
+  background-color: red;
+}
+
+.main {
+  margin-left: $sidebarWidth;
+}
