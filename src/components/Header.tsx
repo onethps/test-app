@@ -8,7 +8,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 
 export const Header: FC = ({}) => {
   return (
-    <Navbar bg="light" className="position-fixed top-0 right-0 left-0 w-100">
+    <Navbar bg="light" className="header">
       <Container>
         <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

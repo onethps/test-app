@@ -14,7 +14,7 @@ export const Layout: FC<PropsWithChildren> = ({ children }) => {
           <Sidebar />
         </Col>
         <Col className="main" as="main">
-          {children}
+          <div className="container">{children}</div>
         </Col>
       </Row>
     </Stack>
