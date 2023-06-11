@@ -1,5 +1,7 @@
 export enum MAIN_ROUTES {
-  HOME = "/home",
+  HOME = "/",
   ORDERS = "/orders",
   PRODUCTS = "/products",
+  GROUPS = "/groups",
+  USERS = "/users",
 }

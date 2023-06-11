@@ -2,3 +2,15 @@
 
 @import "./variables";
 @import "./layout";
+
+.input {
+  background-color: #f0f3f5;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+  text-decoration: "none";
+  border: none;
+  outline: none;
+  font-weight: 600;
+  &::placeholder {
+    color: black;
+  }
+}

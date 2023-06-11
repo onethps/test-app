@@ -6,10 +6,13 @@ import avatar from "../assets/avatar_photo.jpg";
 import { IoMdSettings } from "react-icons/io";
 
 import { Nav, Stack, Badge } from "react-bootstrap";
+import { MAIN_ROUTES } from "@/routes/routes";
+import { usePathname, useRouter } from "next/navigation";
 
 interface SidebarProps {}
 
 export const Sidebar: FC<SidebarProps> = ({}) => {
+  const pathname = usePathname();
   return (
     <Stack className="mt-5">
       <Stack className="d-flex flex-column align-items-center">
@@ -29,17 +32,31 @@ export const Sidebar: FC<SidebarProps> = ({}) => {
           </div>
         </div>
       </Stack>
-      <Nav
-        defaultActiveKey="/home"
-        className="flex-column mx-auto text-center mt-4"
-        variant="underline"
-      >
-        <Nav.Link href="/home" className="border-success">
-          Home
+      <Nav className="flex-column mx-auto text-center mt-4" variant="underline">
+        <Nav.Link
+          active={pathname === MAIN_ROUTES.HOME}
+          href={MAIN_ROUTES.HOME}
+        >
+          Приходы
         </Nav.Link>
-        <Nav.Link href="/about">About</Nav.Link>
-        <Nav.Link href="/services">Services</Nav.Link>
-        <Nav.Link href="/contact">Contact</Nav.Link>
+        <Nav.Link
+          active={pathname === MAIN_ROUTES.GROUPS}
+          href={MAIN_ROUTES.GROUPS}
+        >
+          Группы
+        </Nav.Link>
+        <Nav.Link
+          active={pathname === MAIN_ROUTES.PRODUCTS}
+          href={MAIN_ROUTES.PRODUCTS}
+        >
+          Продукты
+        </Nav.Link>
+        <Nav.Link
+          active={pathname === MAIN_ROUTES.USERS}
+          href={MAIN_ROUTES.USERS}
+        >
+          Пользователи
+        </Nav.Link>
       </Nav>
     </Stack>
   );

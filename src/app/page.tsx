@@ -1,17 +1,11 @@
-"use client";
+import { Orders } from "@/components/Orders";
+import { getOrders, getProducts } from "@/actions/products";
+import { Order } from "@/types/orders";
+import { Product } from "@/types/products";
 
-import { Container, Row, Col } from "react-bootstrap";
+export default async function Page() {
+  const products = await getProducts();
+  const orders = await getOrders();
 
-export default function Home() {
-  return (
-    <main>
-      <div>dwdqwdwqdwqdwqdw</div> <div>dwdqwdwqdwqdwqdw</div>{" "}
-      <div>dwdqwdwqdwqdwqdw</div> <div>dwdqwdwqdwqdwqdw</div>{" "}
-      <div>dwdqwdwqdwqdwqdw</div> <div>dwdqwdwqdwqdwqdw</div>{" "}
-      <div>dwdqwdwqdwqdwqdw</div> <div>dwdqwdwqdwqdwqdw</div>{" "}
-      <div>dwdqwdwqdwqdwqdw</div> <div>dwdqwdwqdwqdwqdw</div>{" "}
-      <div>dwdqwdwqdwqdwqdw</div> <div>dwdqwdwqdwqdwqdw</div>{" "}
-      <div>dwdqwdwqdwqdwqdw</div>{" "}
-    </main>
-  );
+  return <Orders products={products.products} orders={orders.orders} />;
 }
