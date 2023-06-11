@@ -8,6 +8,7 @@ import { BsFillTrashFill } from "react-icons/bs";
 import { getProductsSum } from "@/utils/productUtils";
 import { Product } from "@/types/products";
 import { Order } from "@/types/orders";
+import { longFormatDate, shortFormatDate } from "@/utils/dateFormats";
 
 interface IncomeCardProps {
   products: Product[];
@@ -17,8 +18,6 @@ interface IncomeCardProps {
 export const IncomeCard: FC<IncomeCardProps> = ({ products, order }) => {
   const productsSumValues = getProductsSum(products);
 
-  const shortFormatDate = dayjs(order.date).format("MM / DD");
-  const longFormatDate = dayjs(order.date).format("DD / MM / YYYY");
   return (
     <Card>
       <Card.Body>
@@ -59,10 +58,10 @@ export const IncomeCard: FC<IncomeCardProps> = ({ products, order }) => {
             <Col>
               <div className="d-flex flex-column lh-1 align-items-center">
                 <span className="fw-semibold opacity-50">
-                  {shortFormatDate}
+                  {shortFormatDate(order.date)}
                 </span>
                 <span className="fw-semibold text-secondary fs-5">
-                  {longFormatDate}
+                  {longFormatDate(order.date)}
                 </span>
               </div>
             </Col>

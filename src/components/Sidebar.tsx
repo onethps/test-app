@@ -34,24 +34,28 @@ export const Sidebar: FC<SidebarProps> = ({}) => {
       </Stack>
       <Nav className="flex-column mx-auto text-center mt-4" variant="underline">
         <Nav.Link
+          className={`text-dark fw-bold`}
           active={pathname === MAIN_ROUTES.HOME}
           href={MAIN_ROUTES.HOME}
         >
           Приходы
         </Nav.Link>
         <Nav.Link
+          className=" text-dark fw-bold"
           active={pathname === MAIN_ROUTES.GROUPS}
           href={MAIN_ROUTES.GROUPS}
         >
           Группы
         </Nav.Link>
         <Nav.Link
+          className=" text-dark fw-bold"
           active={pathname === MAIN_ROUTES.PRODUCTS}
           href={MAIN_ROUTES.PRODUCTS}
         >
           Продукты
         </Nav.Link>
         <Nav.Link
+          className=" text-dark fw-bold"
           active={pathname === MAIN_ROUTES.USERS}
           href={MAIN_ROUTES.USERS}
         >

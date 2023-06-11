@@ -16,21 +16,15 @@ export const ProductCard: FC<IncomeCardProps> = ({ product }) => {
   const toDate = longFormatDate(product.guarantee.end);
 
   return (
-    <Card>
+    <Card className="border-0">
       <Card.Body>
         <Container>
-          <Row className="overflow-auto flex-nowrap align-items-center ">
-            {/* name */}
+          <Row className="flex-nowrap align-items-center">
+            {/* name sn picture */}
             <Col sm={4}>
               <div className="d-flex align-items-center gap-3">
-                <span
-                  className="rounded-circle"
-                  style={{
-                    width: 10,
-                    height: 10,
-                    backgroundColor: "#CDDC39",
-                  }}
-                />
+                {/* indicator */}
+                <span className="rounded-circle indicator" />
                 <Image
                   src="https://img1.exportersindia.com/product_images/bc-full/dir_120/3589683/rdp-desktop-with-intel-celeron-2136544.jpeg"
                   alt="product_img"

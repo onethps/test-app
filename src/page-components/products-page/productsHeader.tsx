@@ -9,9 +9,9 @@ interface ProductsHeaderProps {
 
 export const ProductsHeader: FC<ProductsHeaderProps> = ({ products }) => {
   return (
-    <div>
+    <div className="d-flex gap-5 align-items-center my-5">
       <h3>Продукты / {products.length}</h3>
-      <div>
+      <div className="d-flex gap-2">
         <span>Тип:</span>
         <select name="type">
           <option value="value1">Значение 1</option>
@@ -21,7 +21,7 @@ export const ProductsHeader: FC<ProductsHeaderProps> = ({ products }) => {
           <option value="value3">Значение 3</option>
         </select>
       </div>
-      <div>
+      <div className="d-flex gap-2">
         <span>Спецификация:</span>
         <select name="type">
           <option value="value1">Значение 1</option>
