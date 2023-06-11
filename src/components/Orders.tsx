@@ -1,12 +1,21 @@
+"use client";
+
 import { FC } from "react";
-import { Card, Stack } from "react-bootstrap";
-import { AiOutlineUnorderedList } from "react-icons/ai";
+import { Stack } from "react-bootstrap";
 import { AiOutlinePlus } from "react-icons/ai";
-import { IncomeCard } from "./IncomeCard";
+import { IncomeCard } from "../page-components/income-page/IncomeCard";
+import { Product } from "@/types/products";
+import { Order } from "@/types/orders";
 
-interface OrdersProps {}
+interface OrdersProps {
+  products: Product[];
+  orders: Order[];
+}
 
-export const Orders: FC<OrdersProps> = ({}) => {
+export const Orders: FC<OrdersProps> = ({ products, orders }) => {
+  const getOrderProducts = (orderId: number) =>
+    products.filter((product) => product.order === orderId);
+
   return (
     <>
       <div className="d-flex align-items-center gap-3 mt-5">
@@ -23,13 +32,16 @@ export const Orders: FC<OrdersProps> = ({}) => {
         >
           <AiOutlinePlus size="15px" />
         </button>
-        <h3 className="fw-semibold">Приходы / 25</h3>
+        <h3 className="fw-semibold">Приходы / {orders.length}</h3>
       </div>
       <Stack className="gap-3 mt-5">
-        <IncomeCard />
-        <IncomeCard />
-        <IncomeCard />
-        <IncomeCard />
+        {orders.map((order) => (
+          <IncomeCard
+            key={order.id}
+            products={getOrderProducts(order.id)}
+            order={order}
+          />
+        ))}
       </Stack>
     </>
   );
